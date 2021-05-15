@@ -1,0 +1,41 @@
+<template>
+  <template if:true={records}>
+    <table
+      class="
+        slds-table slds-table_cell-buffer
+        slds-table-bordered
+        slds-table_col-bordered
+      "
+    >
+      <thead>
+        <tr class="slds-line-height_reset">
+          <th id="firstName" class="" scope="col">
+            <div class="slds-truncate" title="FirstName">First Name</div>
+          </th>
+          <th id="lastName" class="" scope="col">
+            <div class="slds-truncate" title="LastName">Last Name</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <template for:each={records} for:item="record">
+          <tr class="slds-line-height_reset" key={record.id}>
+            <td class="" scope="col" title="FirstName">
+              <div class="slds-truncate">
+                {record.fields.First_Name__c.value}
+              </div>
+            </td>
+            <td class="" scope="col" title="LastName">
+              <div class="slds-truncate">{record.fields.Name.value}</div>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+  <template if:false={records}>
+    <div class="error">
+      <p id="error">There is no data</p>
+    </div>
+  </template>
+</template>
