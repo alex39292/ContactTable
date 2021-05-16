@@ -9,31 +9,33 @@
     >
       <thead>
         <tr class="slds-line-height_reset">
-          <th id="firstName" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="FirstName">First Name</div>
           </th>
-          <th id="lastName" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="LastName">Last Name</div>
           </th>
-          <th id="email" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="Email">Email</div>
           </th>
-          <th id="account" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="Account">Account</div>
           </th>
-          <th id="mobilePhone" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="MobilePhone">Mobile Phone</div>
           </th>
-          <th id="createdDate" class="" scope="col">
+          <th class="" scope="col">
             <div class="slds-truncate" title="CreatedDate">Created Date</div>
           </th>
         </tr>
       </thead>
       <tbody>
-        <template for:each={records} for:item="record">
+        <template class="data" for:each={records} for:item="record">
           <tr class="slds-line-height_reset" key={record.id}>
-            <td class="" scope="col" title="FirstName">
-              <div class="slds-truncate">{record.FirstName}</div>
+            <td class="" scope="col">
+              <div class="slds-truncate" title="FirstName">
+                {record.FirstName}
+              </div>
             </td>
             <td class="" scope="col" title="LastName">
               <div class="slds-truncate">{record.LastName}</div>
@@ -45,10 +47,20 @@
               <div class="slds-truncate">{record.AccountId}</div>
             </td>
             <td class="" scope="col" title="MobilePhone">
-              <div class="slds-truncate">{record.Mobile_Phone__c}</div>
+              <div class="slds-truncate">{record.MobilePhone}</div>
             </td>
             <td class="" scope="col" title="CreatedDate">
-              <div class="slds-truncate">{record.Created_Date__c}</div>
+              <div class="slds-truncate">
+                <lightning-formatted-date-time
+                  value={record.Created_Date__c}
+                  year="numeric"
+                  month="numeric"
+                  day="numeric"
+                  hour="2-digit"
+                  minute="2-digit"
+                >
+                </lightning-formatted-date-time>
+              </div>
             </td>
           </tr>
         </template>

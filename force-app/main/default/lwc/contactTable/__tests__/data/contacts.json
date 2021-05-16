@@ -7,7 +7,7 @@
       "displayValue": null,
       "value": "0015g00000CsFf6AAF"
     },
-    "CreatedDate": {
+    "Created_Date__c": {
       "displayValue": "4/24/2021, 10:18 AM",
       "value": "2021-04-24T17:18:19.000Z"
     },
@@ -15,11 +15,11 @@
       "displayValue": null,
       "value": "bond_john@grandhotels.com"
     },
-    "FirstName__c": {
+    "FirstName": {
       "displayValue": null,
       "value": "John"
     },
-    "LastName__c": {
+    "LastName": {
       "displayValue": null,
       "value": "Bond"
     },
