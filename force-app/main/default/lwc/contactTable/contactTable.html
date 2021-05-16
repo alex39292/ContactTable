@@ -15,18 +15,40 @@
           <th id="lastName" class="" scope="col">
             <div class="slds-truncate" title="LastName">Last Name</div>
           </th>
+          <th id="email" class="" scope="col">
+            <div class="slds-truncate" title="Email">Email</div>
+          </th>
+          <th id="account" class="" scope="col">
+            <div class="slds-truncate" title="Account">Account</div>
+          </th>
+          <th id="mobilePhone" class="" scope="col">
+            <div class="slds-truncate" title="MobilePhone">Mobile Phone</div>
+          </th>
+          <th id="createdDate" class="" scope="col">
+            <div class="slds-truncate" title="CreatedDate">Created Date</div>
+          </th>
         </tr>
       </thead>
       <tbody>
         <template for:each={records} for:item="record">
           <tr class="slds-line-height_reset" key={record.id}>
             <td class="" scope="col" title="FirstName">
-              <div class="slds-truncate">
-                {record.fields.First_Name__c.value}
-              </div>
+              <div class="slds-truncate">{record.FirstName}</div>
             </td>
             <td class="" scope="col" title="LastName">
-              <div class="slds-truncate">{record.fields.Name.value}</div>
+              <div class="slds-truncate">{record.LastName}</div>
+            </td>
+            <td class="" scope="col" title="Email">
+              <div class="slds-truncate">{record.Email}</div>
+            </td>
+            <td class="" scope="col" title="Account">
+              <div class="slds-truncate">{record.AccountId}</div>
+            </td>
+            <td class="" scope="col" title="MobilePhone">
+              <div class="slds-truncate">{record.Mobile_Phone__c}</div>
+            </td>
+            <td class="" scope="col" title="CreatedDate">
+              <div class="slds-truncate">{record.Created_Date__c}</div>
             </td>
           </tr>
         </template>

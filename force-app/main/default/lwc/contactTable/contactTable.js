@@ -1,17 +1,13 @@
 import { LightningElement, wire } from "lwc";
-import { getListUi } from "lightning/uiListApi";
-import CONTACT_OBJECT from "@salesforce/schema/Contact";
+import getContacts from "@salesforce/apex/ContactController.getContacts";
 
 export default class ContactTable extends LightningElement {
   records;
 
-  @wire(getListUi, {
-    objectApiName: CONTACT_OBJECT,
-    listViewApiName: "AllContacts"
-  })
+  @wire(getContacts)
   getContacts({ data, error }) {
     if (data) {
-      this.records = data.records.records;
+      this.records = data;
     } else {
       this.error = error;
     }
