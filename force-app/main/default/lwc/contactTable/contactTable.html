@@ -1,5 +1,22 @@
 <template>
   <template if:true={records}>
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-input
+        class="input"
+        type="text"
+        label="SEARCH BY NAME"
+        placeholder="Jack"
+        onchange={getName}
+      ></lightning-input>
+      <lightning-button
+        variant="brand"
+        label="FILTER"
+        onclick={filterByName}
+      ></lightning-button>
+    </div>
+    <div>
+      <p>{trLength}</p>
+    </div>
     <table
       class="
         slds-table slds-table_cell-buffer
@@ -31,9 +48,9 @@
       </thead>
       <tbody>
         <template class="data" for:each={records} for:item="record">
-          <tr class="slds-line-height_reset" key={record.id}>
+          <tr class="tr slds-line-height_reset" key={record.id}>
             <td class="" scope="col">
-              <div class="slds-truncate" title="FirstName">
+              <div class="name slds-truncate" title="FirstName">
                 {record.FirstName}
               </div>
             </td>
@@ -46,7 +63,7 @@
             <td class="" scope="col" title="Account">
               <div class="slds-truncate">
                 <lightning-button
-                  variant="Base"
+                  variant="base"
                   label={record.AccountId}
                   onclick={viewRecord}
                 ></lightning-button>
