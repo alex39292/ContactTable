@@ -44,7 +44,13 @@
               <div class="slds-truncate">{record.Email}</div>
             </td>
             <td class="" scope="col" title="Account">
-              <div class="slds-truncate">{record.AccountId}</div>
+              <div class="slds-truncate">
+                <lightning-button
+                  variant="Base"
+                  label={record.AccountId}
+                  onclick={viewRecord}
+                ></lightning-button>
+              </div>
             </td>
             <td class="" scope="col" title="MobilePhone">
               <div class="slds-truncate">{record.MobilePhone}</div>
