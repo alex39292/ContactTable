@@ -5,7 +5,6 @@ import getContacts from "@salesforce/apex/ContactController.getContacts";
 export default class ContactTable extends NavigationMixin(LightningElement) {
   records;
   inputField;
-  trLength;
 
   @wire(getContacts)
   getContacts({ data, error }) {
