@@ -1,95 +1,49 @@
 <template>
-  <template if:true={records}>
-    <div class="slds-p-around_medium lgc-bg">
-      <lightning-input
-        class="input"
-        type="text"
-        label="SEARCH BY NAME"
-        placeholder="Jack"
-        onchange={getName}
-      ></lightning-input>
-      <lightning-button
-        variant="brand"
-        label="FILTER"
-        onclick={filterByName}
-      ></lightning-button>
-    </div>
-    <table
-      class="
-        slds-table slds-table_cell-buffer
-        slds-table-bordered
-        slds-table_col-bordered
-      "
-    >
-      <thead>
-        <tr class="slds-line-height_reset">
-          <th class="" scope="col">
-            <div class="slds-truncate" title="FirstName">First Name</div>
-          </th>
-          <th class="" scope="col">
-            <div class="slds-truncate" title="LastName">Last Name</div>
-          </th>
-          <th class="" scope="col">
-            <div class="slds-truncate" title="Email">Email</div>
-          </th>
-          <th class="" scope="col">
-            <div class="slds-truncate" title="Account">Account</div>
-          </th>
-          <th class="" scope="col">
-            <div class="slds-truncate" title="MobilePhone">Mobile Phone</div>
-          </th>
-          <th class="" scope="col">
-            <div class="slds-truncate" title="CreatedDate">Created Date</div>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <template class="data" for:each={records} for:item="record">
-          <tr class="tr slds-line-height_reset" key={record.id}>
-            <td class="" scope="col">
-              <div class="name slds-truncate" title="FirstName">
-                {record.FirstName}
-              </div>
-            </td>
-            <td class="" scope="col" title="LastName">
-              <div class="slds-truncate">{record.LastName}</div>
-            </td>
-            <td class="" scope="col" title="Email">
-              <div class="slds-truncate">{record.Email}</div>
-            </td>
-            <td class="" scope="col" title="Account">
-              <div class="slds-truncate">
-                <lightning-button
-                  variant="base"
-                  label={record.AccountId}
-                  onclick={viewRecord}
-                ></lightning-button>
-              </div>
-            </td>
-            <td class="" scope="col" title="MobilePhone">
-              <div class="slds-truncate">{record.MobilePhone}</div>
-            </td>
-            <td class="" scope="col" title="CreatedDate">
-              <div class="slds-truncate">
-                <lightning-formatted-date-time
-                  value={record.Created_Date__c}
-                  year="numeric"
-                  month="numeric"
-                  day="numeric"
-                  hour="2-digit"
-                  minute="2-digit"
-                >
-                </lightning-formatted-date-time>
-              </div>
-            </td>
-          </tr>
-        </template>
-      </tbody>
-    </table>
-  </template>
-  <template if:false={records}>
-    <div class="error">
-      <p id="error">There is no data</p>
-    </div>
-  </template>
+  <div class="slds-p-around_medium lgc-bg">
+    <lightning-input
+      class="input"
+      type="text"
+      label="SEARCH BY NAME"
+      placeholder="Jack"
+      onchange={getName}
+    ></lightning-input>
+    <lightning-button
+      variant="brand"
+      label="FILTER"
+      onclick={filterByName}
+    ></lightning-button>
+  </div>
+  <table
+    class="
+      slds-table slds-table_cell-buffer
+      slds-table-bordered
+      slds-table_col-bordered
+    "
+  >
+    <thead>
+      <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+          <div class="slds-truncate" title="FirstName">First Name</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="LastName">Last Name</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Email">Email</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Account">Account</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="MobilePhone">Mobile Phone</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="CreatedDate">Created Date</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <c-tbody></c-tbody>
+    </tbody>
+  </table>
 </template>

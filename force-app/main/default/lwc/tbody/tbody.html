@@ -1,0 +1,47 @@
+<template>
+  <template if:true={records} class="data" for:each={records} for:item="record">
+    <tr class="tr slds-line-height_reset" key={record.id}>
+      <td class="" scope="col">
+        <div class="name slds-truncate" title="FirstName">
+          {record.FirstName}
+        </div>
+      </td>
+      <td class="" scope="col" title="LastName">
+        <div class="slds-truncate">{record.LastName}</div>
+      </td>
+      <td class="" scope="col" title="Email">
+        <div class="slds-truncate">{record.Email}</div>
+      </td>
+      <td class="" scope="col" title="Account">
+        <div class="slds-truncate">
+          <lightning-button
+            variant="base"
+            label={record.AccountId}
+            onclick={viewRecord}
+          ></lightning-button>
+        </div>
+      </td>
+      <td class="" scope="col" title="MobilePhone">
+        <div class="slds-truncate">{record.MobilePhone}</div>
+      </td>
+      <td class="" scope="col" title="CreatedDate">
+        <div class="slds-truncate">
+          <lightning-formatted-date-time
+            value={record.Created_Date__c}
+            year="numeric"
+            month="numeric"
+            day="numeric"
+            hour="2-digit"
+            minute="2-digit"
+          >
+          </lightning-formatted-date-time>
+        </div>
+      </td>
+    </tr>
+  </template>
+  <template if:false={records}>
+    <div class="error">
+      <p id="error">{error}</p>
+    </div>
+  </template>
+</template>
