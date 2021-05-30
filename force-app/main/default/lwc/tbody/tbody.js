@@ -1,7 +1,8 @@
 import { LightningElement, wire } from "lwc";
 import getContacts from "@salesforce/apex/ContactController.getContacts";
+import { NavigationMixin } from "lightning/navigation";
 
-export default class Tbody extends LightningElement {
+export default class Tbody extends NavigationMixin(LightningElement) {
   records;
   error;
 
@@ -12,5 +13,16 @@ export default class Tbody extends LightningElement {
     } else {
       this.error = error;
     }
+  }
+
+  viewRecord(event) {
+    this[NavigationMixin.Navigate]({
+      type: "standard__recordPage",
+      attributes: {
+        recordId: event.target.label,
+        objectApiName: "Account",
+        actionName: "view"
+      }
+    });
   }
 }

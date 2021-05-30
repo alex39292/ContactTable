@@ -13,37 +13,29 @@
       onclick={filterByName}
     ></lightning-button>
   </div>
-  <table
-    class="
-      slds-table slds-table_cell-buffer
-      slds-table-bordered
-      slds-table_col-bordered
-    "
-  >
-    <thead>
-      <tr class="slds-line-height_reset">
-        <th class="" scope="col">
+  <div class="table">
+    <div class="table-thead">
+      <div class="table-tr">
+        <div class="table-th">
           <div class="slds-truncate" title="FirstName">First Name</div>
-        </th>
-        <th class="" scope="col">
+        </div>
+        <div class="table-th">
           <div class="slds-truncate" title="LastName">Last Name</div>
-        </th>
-        <th class="" scope="col">
+        </div>
+        <div class="table-th">
           <div class="slds-truncate" title="Email">Email</div>
-        </th>
-        <th class="" scope="col">
+        </div>
+        <div class="table-th">
           <div class="slds-truncate" title="Account">Account</div>
-        </th>
-        <th class="" scope="col">
+        </div>
+        <div class="table-th">
           <div class="slds-truncate" title="MobilePhone">Mobile Phone</div>
-        </th>
-        <th class="" scope="col">
+        </div>
+        <div class="table-th">
           <div class="slds-truncate" title="CreatedDate">Created Date</div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <c-tbody></c-tbody>
-    </tbody>
-  </table>
+        </div>
+      </div>
+    </div>
+    <c-tbody class="table-tbody"></c-tbody>
+  </div>
 </template>

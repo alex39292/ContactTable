@@ -1,0 +1,32 @@
+.table {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  empty-cells: show;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.table-thead {
+  display: table-header-group;
+}
+
+.table-tr {
+  display: table-row;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table-th {
+  display: table-cell;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #ddd;
+}
+
+.table-tbody {
+  display: table-row-group;
+}

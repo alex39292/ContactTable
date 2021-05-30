@@ -1,18 +1,18 @@
 <template>
   <template if:true={records} class="data" for:each={records} for:item="record">
-    <tr class="tr slds-line-height_reset" key={record.id}>
-      <td class="" scope="col">
+    <div class="table-tr-body" key={record.id}>
+      <div class="table-td">
         <div class="name slds-truncate" title="FirstName">
           {record.FirstName}
         </div>
-      </td>
-      <td class="" scope="col" title="LastName">
+      </div>
+      <div class="table-td" title="LastName">
         <div class="slds-truncate">{record.LastName}</div>
-      </td>
-      <td class="" scope="col" title="Email">
+      </div>
+      <div class="table-td" title="Email">
         <div class="slds-truncate">{record.Email}</div>
-      </td>
-      <td class="" scope="col" title="Account">
+      </div>
+      <div class="table-td" title="Account">
         <div class="slds-truncate">
           <lightning-button
             variant="base"
@@ -20,11 +20,11 @@
             onclick={viewRecord}
           ></lightning-button>
         </div>
-      </td>
-      <td class="" scope="col" title="MobilePhone">
+      </div>
+      <div class="table-td" title="MobilePhone">
         <div class="slds-truncate">{record.MobilePhone}</div>
-      </td>
-      <td class="" scope="col" title="CreatedDate">
+      </div>
+      <div class="table-td" title="CreatedDate">
         <div class="slds-truncate">
           <lightning-formatted-date-time
             value={record.Created_Date__c}
@@ -36,8 +36,8 @@
           >
           </lightning-formatted-date-time>
         </div>
-      </td>
-    </tr>
+      </div>
+    </div>
   </template>
   <template if:false={records}>
     <div class="error">

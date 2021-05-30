@@ -1,26 +1,14 @@
 import { LightningElement } from "lwc";
-import { NavigationMixin } from "lightning/navigation";
 
-export default class ContactTable extends NavigationMixin(LightningElement) {
+export default class ContactTable extends LightningElement {
   inputField;
-
-  viewRecord(event) {
-    this[NavigationMixin.Navigate]({
-      type: "standard__recordPage",
-      attributes: {
-        recordId: event.target.label,
-        objectApiName: "Account",
-        actionName: "view"
-      }
-    });
-  }
 
   getName() {
     this.inputField = this.template.querySelector(".input").value;
   }
 
   filterByName() {
-    const tr = this.template.querySelectorAll(".tr");
+    const tr = this.template.querySelectorAll(".table-tr");
     if (!this.inputField || this.inputField === "") {
       tr.forEach((element) => {
         element.style.display = "";
