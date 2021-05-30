@@ -1,41 +1,27 @@
 <template>
-  <template if:true={records} class="data" for:each={records} for:item="record">
+  <template if:true={records} for:each={records} for:item="record">
     <div class="table-tr-body" key={record.id}>
-      <div class="table-td">
-        <div class="name slds-truncate" title="FirstName">
-          {record.FirstName}
-        </div>
-      </div>
-      <div class="table-td" title="LastName">
-        <div class="slds-truncate">{record.LastName}</div>
-      </div>
-      <div class="table-td" title="Email">
-        <div class="slds-truncate">{record.Email}</div>
-      </div>
+      <div class="table-td name" title="FirstName">{record.FirstName}</div>
+      <div class="table-td" title="LastName">{record.LastName}</div>
+      <div class="table-td" title="Email">{record.Email}</div>
       <div class="table-td" title="Account">
-        <div class="slds-truncate">
-          <lightning-button
-            variant="base"
-            label={record.AccountId}
-            onclick={viewRecord}
-          ></lightning-button>
-        </div>
+        <lightning-button
+          variant="base"
+          label={record.AccountId}
+          onclick={viewRecord}
+        ></lightning-button>
       </div>
-      <div class="table-td" title="MobilePhone">
-        <div class="slds-truncate">{record.MobilePhone}</div>
-      </div>
+      <div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
       <div class="table-td" title="CreatedDate">
-        <div class="slds-truncate">
-          <lightning-formatted-date-time
-            value={record.Created_Date__c}
-            year="numeric"
-            month="numeric"
-            day="numeric"
-            hour="2-digit"
-            minute="2-digit"
-          >
-          </lightning-formatted-date-time>
-        </div>
+        <lightning-formatted-date-time
+          value={record.Created_Date__c}
+          year="numeric"
+          month="numeric"
+          day="numeric"
+          hour="2-digit"
+          minute="2-digit"
+        >
+        </lightning-formatted-date-time>
       </div>
     </div>
   </template>
