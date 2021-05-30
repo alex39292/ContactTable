@@ -1,4 +1,4 @@
-import { LightningElement, wire } from "lwc";
+import { LightningElement, wire, api } from "lwc";
 import getContacts from "@salesforce/apex/ContactController.getContacts";
 import { NavigationMixin } from "lightning/navigation";
 
@@ -24,5 +24,24 @@ export default class Tbody extends NavigationMixin(LightningElement) {
         actionName: "view"
       }
     });
+  }
+
+  @api
+  filterByName(inputField) {
+    const tr = this.template.querySelectorAll(".table-tr-body");
+    if (!inputField || inputField === "") {
+      tr.forEach((element) => {
+        element.style.display = "";
+      });
+    } else {
+      for (let i = 0; i < tr.length; i++) {
+        const td = this.template.querySelectorAll(".name")[i].textContent;
+        if (!td.includes(inputField)) {
+          tr[i].style.display = "none";
+        } else {
+          tr[i].style.display = "";
+        }
+      }
+    }
   }
 }
