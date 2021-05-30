@@ -1,4 +1,4 @@
-import { LightningElement, wire, track } from "lwc";
+import { LightningElement } from "lwc";
 import { NavigationMixin } from "lightning/navigation";
 
 export default class ContactTable extends NavigationMixin(LightningElement) {
