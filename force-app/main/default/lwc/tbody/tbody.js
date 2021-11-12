@@ -6,10 +6,27 @@ export default class Tbody extends NavigationMixin(LightningElement) {
   records;
   error;
 
+  // Отправлять запрос на сервер без фильтров - очень плохо. Если такое использовать в проектах, то каждый запрос ради
+  // одного контакта будет запрашивать с сервера весь список что рано или поздно приведет к лимитам:
+  // https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm
+  // Лучше сразу запрашивать с сервера отфильтрованные данные с помощью [WHERE имя поля := или LIKE "значение"]
+  // Для того чтобы указать примерное значение используется символ %
+
   @wire(getContacts)
   getContacts({ data, error }) {
     if (data) {
-      this.records = data;
+      this.records = data.map((elem) => {
+        return {
+          Id: elem.Id,
+          AccountId: elem.Account !== undefined ? elem.Account.Id : null,
+          AccountName: elem.Account !== undefined ? elem.Account.Name : null,
+          FirstName: elem.FirstName,
+          LastName: elem.LastName,
+          Email: elem.Email,
+          MobilePhone: elem.MobilePhone,
+          CreatedDate: elem.CreatedDate
+        };
+      });
     } else {
       this.error = error;
     }
@@ -19,12 +36,15 @@ export default class Tbody extends NavigationMixin(LightningElement) {
     this[NavigationMixin.Navigate]({
       type: "standard__recordPage",
       attributes: {
-        recordId: event.target.label,
+        recordId: event.target.value,
         objectApiName: "Account",
         actionName: "view"
       }
     });
   }
+
+  // интересно что ты пишешь сначала forEach а потом используешь цикл for. Лучше использовать JS-методы работы с массивами:
+  // они и короче, и понятней. Почитай о них тут: https://www.w3schools.com/js/js_array_iteration.asp
 
   @api
   filterByName(inputField) {
@@ -34,14 +54,14 @@ export default class Tbody extends NavigationMixin(LightningElement) {
         element.style.display = "";
       });
     } else {
-      for (let i = 0; i < tr.length; i++) {
-        const td = this.template.querySelectorAll(".name")[i].textContent;
+      tr.forEach((value, index) => {
+        const td = this.template.querySelectorAll(".name")[index].textContent;
         if (!td.includes(inputField)) {
-          tr[i].style.display = "none";
+          tr[index].style.display = "none";
         } else {
-          tr[i].style.display = "";
+          tr[index].style.display = "";
         }
-      }
+      });
     }
   }
 }
