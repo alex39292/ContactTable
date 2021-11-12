@@ -5,13 +5,13 @@
 			type="text"
 			label="SEARCH BY NAME"
 			placeholder="Jack"
-			onchange={getName}
+			onchange="{getName}"
 		>
 		</lightning-input>
 		<lightning-button
 			variant="brand"
 			label="FILTER"
-			onclick={filterByName}
+			onclick="{filterByName}"
 		></lightning-button>
 	</div>
 	<div class="table">
@@ -37,10 +37,10 @@
 				</div>
 			</div>
 		</div>
-		<template if:true={records} for:each={records} for:item="record">
-			<c-tbody class="table-tbody" key={record.Id}></c-tbody>
+		<template if:true="{records}" for:each="{records}" for:item="record">
+			<c-tbody class="table-tbody" key="{record.Id}"></c-tbody>
 		</template>
-		<template if:false={records}>
+		<template if:false="{records}">
 			<div class="error">
 				<p id="error">{error}</p>
 			</div>

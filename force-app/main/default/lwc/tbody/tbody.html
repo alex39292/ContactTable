@@ -6,16 +6,16 @@
 		<div class="table-td" title="Account">
 			<lightning-button
 				variant="base"
-				value={record.AccountId}
-				label={record.AccountName}
-				onclick={viewRecord}
+				value="{record.AccountId}"
+				label="{record.AccountName}"
+				onclick="{viewRecord}"
 			>
 			</lightning-button>
 		</div>
 		<div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
 		<div class="table-td" title="CreatedDate">
 			<lightning-formatted-date-time
-				value={record.CreatedDate}
+				value="{record.CreatedDate}"
 				year="numeric"
 				month="numeric"
 				day="numeric"
