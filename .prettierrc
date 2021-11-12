@@ -2,5 +2,15 @@
   "trailingComma": "none",
   "useTabs": true,
   "tabWidth": 4,
-  "bracketSameLine": true
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files": "**/lwc/**/*.html",
+      "options": { "parser": "lwc" }
+    },
+    {
+      "files": "*.{cmp,page,component}",
+      "options": { "parser": "lwc" }
+    }
+  ]
 }
