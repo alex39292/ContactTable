@@ -1,32 +1,32 @@
 <template>
-  <!-- Этот итератор ожидался в родительском компоненте. А так получился template в template -->
-  <div class="table-tr-body">
-    <div class="table-td name" title="FirstName">{key.FirstName}</div>
-    <div class="table-td" title="LastName">{record.LastName}</div>
-    <div class="table-td" title="Email">{record.Email}</div>
-    <div class="table-td" title="Account">
-      <lightning-button
-        variant="base"
-        value={record.AccountId}
-        label={record.AccountName}
-        onclick={viewRecord}
-      >
-      </lightning-button>
-      <!-- Тут в качестве label должен быть не AccountID а Account.Name чтобы отображалось мя -->
-    </div>
-    <div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
-    <div class="table-td" title="CreatedDate">
-      <lightning-formatted-date-time
-        value={record.CreatedDate}
-        year="numeric"
-        month="numeric"
-        day="numeric"
-        hour="2-digit"
-        minute="2-digit"
-      >
-        <!-- Created Date - стандартный филд only-read. Посмотреть все виды филдов можно через SOQL запрос в Dev Console
+	<!-- Этот итератор ожидался в родительском компоненте. А так получился template в template -->
+	<div class="table-tr-body">
+		<div class="table-td name" title="FirstName">{key.FirstName}</div>
+		<div class="table-td" title="LastName">{record.LastName}</div>
+		<div class="table-td" title="Email">{record.Email}</div>
+		<div class="table-td" title="Account">
+			<lightning-button
+				variant="base"
+				value={record.AccountId}
+				label={record.AccountName}
+				onclick={viewRecord}
+			>
+			</lightning-button>
+			<!-- Тут в качестве label должен быть не AccountID а Account.Name чтобы отображалось мя -->
+		</div>
+		<div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
+		<div class="table-td" title="CreatedDate">
+			<lightning-formatted-date-time
+				value={record.CreatedDate}
+				year="numeric"
+				month="numeric"
+				day="numeric"
+				hour="2-digit"
+				minute="2-digit"
+			>
+				<!-- Created Date - стандартный филд only-read. Посмотреть все виды филдов можно через SOQL запрос в Dev Console
          [SELECT * FROM Contacts LIMIT 1] -->
-      </lightning-formatted-date-time>
-    </div>
-  </div>
+			</lightning-formatted-date-time>
+		</div>
+	</div>
 </template>

@@ -1,52 +1,52 @@
 <template>
-  <div class="slds-p-bottom_large">
-    <lightning-input
-      class="input"
-      type="text"
-      label="SEARCH BY NAME"
-      placeholder="Jack"
-      onchange={getName}
-    >
-    </lightning-input>
-    <!-- Параметры тегов пишутся в одну строчку. Если не получается - можно переносить на следующую строку
+	<div class="slds-p-bottom_large">
+		<lightning-input
+			class="input"
+			type="text"
+			label="SEARCH BY NAME"
+			placeholder="Jack"
+			onchange={getName}
+		>
+		</lightning-input>
+		<!-- Параметры тегов пишутся в одну строчку. Если не получается - можно переносить на следующую строку
     но тогда замыкающий тег должен быть на той же колонке что и открывающий. И опять же четыре пробела -->
-    <lightning-button
-      variant="brand"
-      label="FILTER"
-      onclick={filterByName}
-    ></lightning-button>
-  </div>
-  <div class="table">
-    <div class="table-thead">
-      <div class="table-tr">
-        <div class="table-th">
-          <div title="FirstName">First Name</div>
-        </div>
-        <div class="table-th">
-          <div title="LastName">Last Name</div>
-        </div>
-        <div class="table-th">
-          <div title="Email">Email</div>
-        </div>
-        <div class="table-th">
-          <div title="Account">Account</div>
-        </div>
-        <div class="table-th">
-          <div title="MobilePhone">Mobile Phone</div>
-        </div>
-        <div class="table-th">
-          <div title="CreatedDate">Created Date</div>
-        </div>
-      </div>
-    </div>
-    <template if:true={records} for:each={records} for:item="record">
-      <c-tbody class="table-tbody" key={record.Id}></c-tbody>
-    </template>
-    <template if:false={records}>
-      <div class="error">
-        <p id="error">{error}</p>
-      </div>
-    </template>
-    <!-- Вот тут ожидался итератор template с с-tbody внутри -->
-  </div>
+		<lightning-button
+			variant="brand"
+			label="FILTER"
+			onclick={filterByName}
+		></lightning-button>
+	</div>
+	<div class="table">
+		<div class="table-thead">
+			<div class="table-tr">
+				<div class="table-th">
+					<div title="FirstName">First Name</div>
+				</div>
+				<div class="table-th">
+					<div title="LastName">Last Name</div>
+				</div>
+				<div class="table-th">
+					<div title="Email">Email</div>
+				</div>
+				<div class="table-th">
+					<div title="Account">Account</div>
+				</div>
+				<div class="table-th">
+					<div title="MobilePhone">Mobile Phone</div>
+				</div>
+				<div class="table-th">
+					<div title="CreatedDate">Created Date</div>
+				</div>
+			</div>
+		</div>
+		<template if:true={records} for:each={records} for:item="record">
+			<c-tbody class="table-tbody" key={record.Id}></c-tbody>
+		</template>
+		<template if:false={records}>
+			<div class="error">
+				<p id="error">{error}</p>
+			</div>
+		</template>
+		<!-- Вот тут ожидался итератор template с с-tbody внутри -->
+	</div>
 </template>
