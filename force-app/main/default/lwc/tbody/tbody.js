@@ -43,9 +43,6 @@ export default class Tbody extends NavigationMixin(LightningElement) {
     });
   }
 
-  // интересно что ты пишешь сначала forEach а потом используешь цикл for. Лучше использовать JS-методы работы с массивами:
-  // они и короче, и понятней. Почитай о них тут: https://www.w3schools.com/js/js_array_iteration.asp
-
   @api
   filterByName(inputField) {
     const tr = this.template.querySelectorAll(".table-tr-body");
