@@ -4,13 +4,13 @@
         <div class="table-td" title="LastName">{record.LastName}</div>
         <div class="table-td" title="Email">{record.Email}</div>
         <div class="table-td" title="Account">
-            <lightning-button variant="base" value="{record.AccountId}" label="{record.AccountName}"
-                onclick="{viewRecord}">
+            <lightning-button variant="base" value={record.AccountId} label={record.AccountName}
+                onclick={viewRecord}>
             </lightning-button>
         </div>
         <div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
         <div class="table-td" title="CreatedDate">
-            <lightning-formatted-date-time value="{record.CreatedDate}" year="numeric" month="numeric" day="numeric"
+            <lightning-formatted-date-time value={record.CreatedDate} year="numeric" month="numeric" day="numeric"
                 hour="2-digit" minute="2-digit">
             </lightning-formatted-date-time>
         </div>

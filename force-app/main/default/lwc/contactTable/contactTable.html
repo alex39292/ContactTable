@@ -1,8 +1,8 @@
 <template>
     <div class="slds-p-bottom_large">
-        <lightning-input class="input" type="text" label="SEARCH BY NAME" placeholder="Jack" onchange="{getName}">
+        <lightning-input class="input" type="text" label="SEARCH BY NAME" placeholder="Jack" onchange={getName}>
         </lightning-input>
-        <lightning-button variant="brand" label="FILTER" onclick="{filterByName}"></lightning-button>
+        <lightning-button variant="brand" label="FILTER" onclick={filterByName}></lightning-button>
     </div>
     <div class="table">
         <div class="table-thead">
@@ -27,10 +27,10 @@
                 </div>
             </div>
         </div>
-        <template if:true="{records}" for:each="{records}" for:item="record">
-            <c-tbody class="table-tbody" key="{record.Id}"></c-tbody>
+        <template if:true={records} for:each={records} for:item="record">
+            <c-tbody class="table-tbody" key={record.Id}></c-tbody>
         </template>
-        <template if:false="{records}">
+        <template if:false={records}>
             <div class="error">
                 <p id="error">{error}</p>
             </div>
