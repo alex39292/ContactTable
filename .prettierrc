@@ -2,6 +2,7 @@
   "trailingComma": "none",
   "useTabs": true,
   "tabWidth": 4,
+  "bracketSameLine": true,
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
