@@ -6,5 +6,6 @@
 .localdevserver
 .sfdx
 .vscode
+*.html
 
 coverage/
