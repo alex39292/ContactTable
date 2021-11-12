@@ -1,5 +1,4 @@
 <template>
-	<!-- Этот итератор ожидался в родительском компоненте. А так получился template в template -->
 	<div class="table-tr-body">
 		<div class="table-td name" title="FirstName">{key.FirstName}</div>
 		<div class="table-td" title="LastName">{record.LastName}</div>
@@ -12,7 +11,6 @@
 				onclick={viewRecord}
 			>
 			</lightning-button>
-			<!-- Тут в качестве label должен быть не AccountID а Account.Name чтобы отображалось мя -->
 		</div>
 		<div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
 		<div class="table-td" title="CreatedDate">
@@ -24,8 +22,6 @@
 				hour="2-digit"
 				minute="2-digit"
 			>
-				<!-- Created Date - стандартный филд only-read. Посмотреть все виды филдов можно через SOQL запрос в Dev Console
-         [SELECT * FROM Contacts LIMIT 1] -->
 			</lightning-formatted-date-time>
 		</div>
 	</div>
