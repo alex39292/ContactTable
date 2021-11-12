@@ -1,18 +1,11 @@
-# Salesforce DX Project: Next Steps
+Отправлять запрос на сервер без фильтров - очень плохо. Если такое использовать в проектах, то каждый запрос ради
+    // одного контакта будет запрашивать с сервера весь список что рано или поздно приведет к лимитам:
+    // https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm
+    // Лучше сразу запрашивать с сервера отфильтрованные данные с помощью [WHERE имя поля := или LIKE "значение"]
+    // Для того чтобы указать примерное значение используется символ %
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+интересно что ты пишешь сначала forEach а потом используешь цикл for. Лучше использовать JS-методы работы с массивами: 
+    // они и короче, и понятней. Почитай о них тут: https://www.w3schools.com/js/js_array_iteration.asp
+    
+    
