@@ -10,7 +10,7 @@
     },
     {
       "files": "*.{cmp,page,component}",
-      "options": { "parser": "lwc" }
+      "options": { "parser": "html" }
     }
   ]
 }
