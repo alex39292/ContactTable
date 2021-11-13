@@ -1,16 +1,12 @@
-import { LightningElement, wire, api } from "lwc";
-import getContacts from "@salesforce/apex/ContactController.getContacts";
+import { LightningElement, api, track, wire } from "lwc";
 import { NavigationMixin } from "lightning/navigation";
+import getContacts from "@salesforce/apex/ContactController.getContacts";
 
 export default class Tbody extends NavigationMixin(LightningElement) {
+	@track
 	records;
+	@track
 	error;
-
-	// Отправлять запрос на сервер без фильтров - очень плохо. Если такое использовать в проектах, то каждый запрос ради
-	// одного контакта будет запрашивать с сервера весь список что рано или поздно приведет к лимитам:
-	// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm
-	// Лучше сразу запрашивать с сервера отфильтрованные данные с помощью [WHERE имя поля := или LIKE "значение"]
-	// Для того чтобы указать примерное значение используется символ %
 
 	@wire(getContacts)
 	getContacts({ data, error }) {
@@ -33,6 +29,12 @@ export default class Tbody extends NavigationMixin(LightningElement) {
 			this.error = error;
 		}
 	}
+
+	// Отправлять запрос на сервер без фильтров - очень плохо. Если такое использовать в проектах, то каждый запрос ради
+	// одного контакта будет запрашивать с сервера весь список что рано или поздно приведет к лимитам:
+	// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm
+	// Лучше сразу запрашивать с сервера отфильтрованные данные с помощью [WHERE имя поля := или LIKE "значение"]
+	// Для того чтобы указать примерное значение используется символ %
 
 	viewRecord(event) {
 		this[NavigationMixin.Navigate]({

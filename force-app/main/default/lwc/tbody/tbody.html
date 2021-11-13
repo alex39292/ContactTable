@@ -1,28 +1,32 @@
 <template>
-	<div class="table-tr-body">
-		<div class="table-td name" title="FirstName">{records.FirstName}</div>
-		<div class="table-td" title="LastName">{record.LastName}</div>
-		<div class="table-td" title="Email">{record.Email}</div>
-		<div class="table-td" title="Account">
-			<lightning-button
-				variant="base"
-				value={record.AccountId}
-				label={record.AccountName}
-				onclick={viewRecord}
-			>
-			</lightning-button>
+	<template for:each={records} for:item="record">
+		<div class="table-tr-body" key={record.Id}>
+			<div class="table-td name" title="FirstName">
+				{record.FirstName}
+			</div>
+			<div class="table-td" title="LastName">{record.LastName}</div>
+			<div class="table-td" title="Email">{record.Email}</div>
+			<div class="table-td" title="Account">
+				<lightning-button
+					variant="base"
+					value={record.AccountId}
+					label={record.AccountName}
+					onclick={viewRecord}
+				>
+				</lightning-button>
+			</div>
+			<div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
+			<div class="table-td" title="CreatedDate">
+				<lightning-formatted-date-time
+					value={records.CreatedDate}
+					year="numeric"
+					month="numeric"
+					day="numeric"
+					hour="2-digit"
+					minute="2-digit"
+				>
+				</lightning-formatted-date-time>
+			</div>
 		</div>
-		<div class="table-td" title="MobilePhone">{record.MobilePhone}</div>
-		<div class="table-td" title="CreatedDate">
-			<lightning-formatted-date-time
-				value={record.CreatedDate}
-				year="numeric"
-				month="numeric"
-				day="numeric"
-				hour="2-digit"
-				minute="2-digit"
-			>
-			</lightning-formatted-date-time>
-		</div>
-	</div>
+	</template>
 </template>
