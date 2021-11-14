@@ -5,13 +5,12 @@
 			type="text"
 			label="SEARCH BY NAME"
 			placeholder="Jack"
-			onchange={getName}
 		>
 		</lightning-input>
 		<lightning-button
 			variant="brand"
 			label="FILTER"
-			onclick={filterByName}
+			onclick={handleNameChange}
 		></lightning-button>
 	</div>
 	<div class="table">
@@ -37,6 +36,6 @@
 				</div>
 			</div>
 		</div>
-		<c-tbody class="table-tbody"></c-tbody>
+		<c-tbody class="table-tbody" input-field={inputField}></c-tbody>
 	</div>
 </template>
