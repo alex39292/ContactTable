@@ -13,7 +13,7 @@ export default class Tbody extends NavigationMixin(LightningElement) {
     @wire(getContacts, { name: '$inputField' })
     getContacts({ data, error }) {
         if (data) {
-            this.records = data.map((elem) => {
+            this.records = data.map(elem => {
                 return {
                     Id: elem.Id,
                     AccountId: elem.Account !== undefined ? elem.Account.Id : null,
