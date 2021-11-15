@@ -1,16 +1,17 @@
 {
   "trailingComma": "none",
-  "useTabs": true,
   "tabWidth": 4,
-  "bracketSameLine": true,
+  "printWidth": 120,
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
-      "options": { "parser": "lwc" }
+      "options": { 
+          "bracketSameLine": true,
+          "parser": "lwc" }
     },
     {
-      "files": "*.{cmp,page,component}",
-      "options": { "parser": "html" }
+        "files": "**/lwc/**/*.js",
+        "options": { "singleQuote": true }
     }
   ]
 }

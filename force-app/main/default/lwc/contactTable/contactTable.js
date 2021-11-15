@@ -1,9 +1,9 @@
-import { LightningElement } from "lwc";
+import { LightningElement } from 'lwc';
 
 export default class ContactTable extends LightningElement {
-	inputField = "";
+    inputField = '';
 
-	handleNameChange(event) {
-		this.inputField = event.target.value;
-	}
+    handleNameChange(event) {
+        this.inputField = event.target.value;
+    }
 }

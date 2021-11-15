@@ -1,25 +1,25 @@
 .table-tr-body,
 .table-td {
-	border: 1px solid #ddd;
-	padding: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
 .table-tr-body {
-	display: table-row;
+    display: table-row;
 }
 
 .table-tr-body:hover {
-	background-color: rgb(119, 119, 119);
+    background-color: rgb(119, 119, 119);
 }
 
 .table-tr-body:nth-child(even) {
-	background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .table-tr-body:nth-child(odd) {
-	background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .table-td {
-	display: table-cell;
+    display: table-cell;
 }
