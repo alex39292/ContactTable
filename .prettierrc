@@ -2,12 +2,15 @@
   "trailingComma": "none",
   "tabWidth": 4,
   "printWidth": 120,
+  "bracketSameLine": true,
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
-      "options": { 
-          "bracketSameLine": true,
-          "parser": "lwc" }
+      "options": { "parser": "lwc" }
+    },
+    {
+        "files": "*.{cmp,page,component}",
+        "options": { "parser": "html" }
     },
     {
         "files": "**/lwc/**/*.js",
