@@ -3,7 +3,7 @@ import { LightningElement } from 'lwc';
 export default class ContactTable extends LightningElement {
     inputField = '';
 
-    handleNameChange(event) {
-        this.inputField = event.target.value;
+    handleNameChange() {
+        this.inputField = this.template.querySelector('.inputFilter').value;
     }
 }
