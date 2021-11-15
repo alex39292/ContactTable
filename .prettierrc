@@ -6,7 +6,10 @@
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
-      "options": { "parser": "lwc" }
+      "options": { 
+          "bracketSameLine": true,
+          "parser": "lwc" 
+        }
     },
     {
         "files": "*.{cmp,page,component}",
@@ -14,7 +17,10 @@
     },
     {
         "files": "**/lwc/**/*.js",
-        "options": { "singleQuote": true }
+        "options": { 
+            "singleQuote": true,
+            "semi": true 
+        }
     }
   ]
 }
