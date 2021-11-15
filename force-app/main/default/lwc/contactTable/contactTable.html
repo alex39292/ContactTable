@@ -1,6 +1,7 @@
 <template>
     <div class="slds-p-bottom_large">
-        <lightning-input class="inputFilter" label="SEARCH BY NAME" placeholder="Jack"> </lightning-input>
+        <lightning-input class="inputFilter" label="SEARCH BY NAME" placeholder="Enter Name" onkeypress={handleKey}>
+        </lightning-input>
         <lightning-button variant="brand" label="FILTER" onclick={handleClick}></lightning-button>
     </div>
     <div class="table">
