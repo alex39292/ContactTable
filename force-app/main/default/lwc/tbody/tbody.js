@@ -1,13 +1,12 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import getContacts from '@salesforce/apex/ContactController.getContacts';
 
 export default class Tbody extends NavigationMixin(LightningElement) {
     @api
     inputField;
-    @track
+
     records;
-    @track
     error;
 
     @wire(getContacts, { name: '$inputField' })
